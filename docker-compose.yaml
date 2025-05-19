@@ -39,5 +39,13 @@ services:
     depends_on:
       - app
 
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - app
+
 volumes:
   pgdata:
